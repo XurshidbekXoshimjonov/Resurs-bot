@@ -9,9 +9,13 @@ from loader import bot
 get_id_router: Router = Router()
 
 
+# @get_id_router.message()
+# async def get_id_handler(msg: Message):
+#     file_id = msg.document.file_id
+#     await msg.reply(file_id)
+
+
 @get_id_router.message()
 async def get_id_handler(msg: Message):
-    file_id = msg.document.file_id
+    file_id = msg.video.file_id
     await msg.reply(file_id)
-
-
